@@ -18,5 +18,5 @@ func main() {
 		sum += array[i]
 	}
 
-	fmt.Printf("Sum: %d\n", sum)	
+	fmt.Printf("Sum: %d\n", sum)
 }

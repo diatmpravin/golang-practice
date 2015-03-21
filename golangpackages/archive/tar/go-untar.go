@@ -14,9 +14,7 @@ func main() {
 
 	flag.Parse() // get the arguments from command line
 
-
 	sourcefile := flag.Arg(0)
-
 
 	if sourcefile == "" {
 		fmt.Println("Usage : go-untar sourcefile.tar")
@@ -25,7 +23,6 @@ func main() {
 
 	file, err := os.Open(sourcefile)
 
-
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -33,10 +30,9 @@ func main() {
 
 	defer file.Close()
 
-	
 	var fileReader io.ReadCloser = file
 
-	fmt.Printf("------->%+v\n",fileReader)
+	fmt.Printf("------->%+v\n", fileReader)
 
 	// just in case we are reading a tar.gz file, add a filter to handle gzipped file
 	if strings.HasSuffix(sourcefile, ".gz") {

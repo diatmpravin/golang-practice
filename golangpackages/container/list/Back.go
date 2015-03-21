@@ -1,16 +1,16 @@
 package main
 
-  import (
-    "container/list"
-    "fmt"
-  )
+import (
+	"container/list"
+	"fmt"
+)
 
-  func main() {
-    alist := list.New()
-    alist.PushBack("a")
-    alist.PushBack("b")
-    alist.PushBack("c")
+func main() {
+	alist := list.New()
+	alist.PushBack("a")
+	alist.PushBack("b")
+	alist.PushBack("c")
 
-    e := alist.Back()
-    fmt.Println(e.Value)
- }
+	e := alist.Back()
+	fmt.Println(e.Value)
+}

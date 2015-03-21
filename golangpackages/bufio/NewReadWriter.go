@@ -2,8 +2,8 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"bytes"
+	"fmt"
 	"os"
 )
 
@@ -12,7 +12,7 @@ func main() {
 	readbuffer := bytes.NewBuffer(str)
 
 	write := bufio.NewWriter(os.Stdout)
-	
+
 	readwrite := bufio.NewReadWriter(bufio.NewReader(readbuffer), bufio.NewWriter(write))
 	fmt.Println(readwrite)
 }

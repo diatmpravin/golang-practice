@@ -18,10 +18,10 @@ func main() {
 
 	rune, size, err = buff.ReadRune()
 	fmt.Println(string(rune), size, err)
-	
+
 	rune, size, err = buff.ReadRune()
 	fmt.Println(string(rune), size, err)
-	
+
 	rune, size, err = buff.ReadRune()
 	fmt.Println(string(rune), size, err)
 }

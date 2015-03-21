@@ -12,10 +12,10 @@ func main() {
 
 	alist.PushBack("a")
 	fmt.Println(alist)
-	
+
 	alist.PushBack("b")
 	fmt.Println(alist)
-	
+
 	alist.PushBack("c")
 	fmt.Println(alist)
 

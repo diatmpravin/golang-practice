@@ -1,21 +1,21 @@
 package main
 
- import (
-   "container/list"
-   "fmt"
- )
+import (
+	"container/list"
+	"fmt"
+)
 
- func main() {
-  alist := list.New()
-  alist.PushBack("a")
-  alist.PushBack("b")
-  e := alist.PushBack("c")
-  alist.PushBack("d")
+func main() {
+	alist := list.New()
+	alist.PushBack("a")
+	alist.PushBack("b")
+	e := alist.PushBack("c")
+	alist.PushBack("d")
 
-  alist.MoveToFront(e)
+	alist.MoveToFront(e)
 
-  for e := alist.Front(); e != nil; e = e.Next() {
-     fmt.Println(e.Value) // print out the elements
-  }
+	for e := alist.Front(); e != nil; e = e.Next() {
+		fmt.Println(e.Value) // print out the elements
+	}
 
- }
+}

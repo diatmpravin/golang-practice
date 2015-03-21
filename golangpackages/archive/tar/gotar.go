@@ -25,7 +25,6 @@ func main() {
 
 	destinationfile := flag.Arg(0)
 
-
 	if destinationfile == "" {
 		fmt.Println("Usage : gotar destinationfile.tar.gz source")
 		os.Exit(1)

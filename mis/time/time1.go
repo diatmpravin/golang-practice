@@ -12,7 +12,7 @@ func main() {
 	}
 
 	for _, d := range round {
-                fmt.Println(d)
+		fmt.Println(d)
 		fmt.Println(t.Round(d).Format("15:04:05.999999999"))
 	}
 }

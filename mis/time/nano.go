@@ -10,4 +10,3 @@ func main() {
 	t := tm.Format(time.RFC3339)
 	fmt.Println(t)
 }
-

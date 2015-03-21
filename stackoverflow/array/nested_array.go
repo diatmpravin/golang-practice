@@ -8,7 +8,7 @@ func main() {
 
 	for i, _ := range x {
 		for j, _ := range scores {
-			fmt.Printf("i=> %d and J=> %d\n",i, j)
+			fmt.Printf("i=> %d and J=> %d\n", i, j)
 			x[j] = scores[j]
 		}
 	}

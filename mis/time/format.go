@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"reflect"
-        "strings"
+	"strings"
+	"time"
 )
 
 func main() {

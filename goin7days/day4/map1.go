@@ -16,6 +16,6 @@ func main() {
 	elements["Ne"] = "Neon"
 
 	fmt.Println(elements["Li"])
-       
-        fmt.Println("")
+
+	fmt.Println("")
 }

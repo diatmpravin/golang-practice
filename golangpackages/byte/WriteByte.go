@@ -1,16 +1,16 @@
- package main
+package main
 
- import (
-   "bytes"
-   "fmt"
- )
+import (
+	"bytes"
+	"fmt"
+)
 
- func main() {
-   buff := bytes.NewBuffer(nil) // create empty buffer
+func main() {
+	buff := bytes.NewBuffer(nil) // create empty buffer
 
-   buff.WriteByte('a')
-   buff.WriteRune('中')
-   buff.WriteByte('b')
+	buff.WriteByte('a')
+	buff.WriteRune('中')
+	buff.WriteByte('b')
 
-   fmt.Printf("%s \n", string(buff.Bytes()))
- }
+	fmt.Printf("%s \n", string(buff.Bytes()))
+}

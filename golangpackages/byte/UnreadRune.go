@@ -1,25 +1,25 @@
 package main
 
- import (
-    "bytes"
-    "fmt"
- )
+import (
+	"bytes"
+	"fmt"
+)
 
- func main() {
+func main() {
 
-   buff := bytes.NewBuffer([]byte("abcdefg"))
+	buff := bytes.NewBuffer([]byte("abcdefg"))
 
-   rune, _, _ := buff.ReadRune()
+	rune, _, _ := buff.ReadRune()
 
-   fmt.Println(string(rune))
+	fmt.Println(string(rune))
 
-   // remainder runes
+	// remainder runes
 
-   fmt.Println(string(buff.Bytes()))
+	fmt.Println(string(buff.Bytes()))
 
-   buff.UnreadRune()
+	buff.UnreadRune()
 
-   // back to beginning
-   fmt.Println(string(buff.Bytes()))
+	// back to beginning
+	fmt.Println(string(buff.Bytes()))
 
- }
+}

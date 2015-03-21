@@ -8,7 +8,7 @@ func main() {
 			if j > 6 {
 				break
 			}
-		fmt.Println("Value of I and J is:", i, j)
+			fmt.Println("Value of I and J is:", i, j)
 		}
 	}
 }

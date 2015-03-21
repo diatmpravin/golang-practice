@@ -14,7 +14,7 @@ func main() {
 	buf := new(bytes.Buffer)
 
 	fmt.Println("===>", buf)
-	
+
 	// Create a new tar archive.
 	tw := tar.NewWriter(buf)
 	fmt.Println("===>", tw)

@@ -5,9 +5,9 @@ import (
 )
 
 type opt struct {
-	shortnm byte
+	shortnm      byte
 	longnm, help string
-	needArg               bool
+	needArg      bool
 }
 
 func main() {
