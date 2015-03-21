@@ -21,6 +21,6 @@ func main() {
 	c := []byte{'A'}
 	fmt.Println(unhex(c[0]))
 
-	//c := byte{'A'}    **Error** invalid type for composite literal: byte
-	//fmt.Println(unhex(c))
+	d := byte('A') //    **Error** invalid type for composite literal: byte
+	fmt.Println(unhex(d))
 }
