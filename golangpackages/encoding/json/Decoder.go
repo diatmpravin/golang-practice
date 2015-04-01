@@ -19,9 +19,16 @@ func main() {
 	type Message struct {
 		Name, Text string
 	}
+
+	fmt.Println(strings.NewReader(jsonStream))
+
 	dec := json.NewDecoder(strings.NewReader(jsonStream))
+
+	fmt.Println(dec)
+
 	for {
 		var m Message
+		// decode json object
 		if err := dec.Decode(&m); err == io.EOF {
 			break
 		} else if err != nil {
