@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"strings"
+	"reflect"
 )
 
 func main() {
@@ -19,6 +20,11 @@ func main() {
 		Age  int
 		Job  string
 	}
+
+	fmt.Println(reflect.TypeOf(jsonDataStream))
+
+	a := strings.NewReader(jsonDataStream)
+	fmt.Println(reflect.TypeOf(a))
 
 	decoder := json.NewDecoder(strings.NewReader(jsonDataStream))
 
