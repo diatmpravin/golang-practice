@@ -25,8 +25,8 @@ func main() {
 	var m FamilyMember
 	fmt.Printf("%+v\n",m)
 
-	// var f Foo
-	// fmt.Printf("%+v\n",f)
+	var f Foo
+	fmt.Printf("%+v\n",f)
 
 	err := json.Unmarshal(b, &f)
 	if err != nil {
