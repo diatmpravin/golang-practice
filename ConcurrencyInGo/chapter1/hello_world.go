@@ -12,6 +12,7 @@ type Job struct {
 }
 
 func outputText(j *Job) {
+	fmt.Println("----->", j)
 	for j.i < j.max {
 		time.Sleep(1 * time.Millisecond)
 		fmt.Println(j.text)
@@ -28,7 +29,7 @@ func main() {
 	hello.text = "hello"
 
 	world.i = 0
-	world.max = 5000
+	world.max = 5
 	world.text = "world"
 
 	go outputText(hello)

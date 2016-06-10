@@ -21,7 +21,7 @@ func TestFirstFactorial(t *testing.T) {
 		result := firstFactorial(v.in)
 		if v.out != result {
 			assert.Equal(t, v.in, result)
-			fmt.Println("Expected factorial of %d is %d but got--> %d", v.in, v.out, result)
+			fmt.Printf("Expected factorial of %d is %d but got--> %d \n", v.in, v.out, result)
 		}
 	}
 }
