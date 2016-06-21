@@ -37,7 +37,7 @@ type Episode struct {
 
 type Data struct {
 	Series   `json:"Series"`
-	Episodes []Episode
+	Episodes []Episode `json:"Episodes"`
 }
 
 func main() {
