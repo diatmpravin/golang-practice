@@ -34,7 +34,7 @@ type Episode struct {
 type Data struct {
 	XMLName  xml.Name `xml:"data"`
 	Series   `xml:"Series"`
-	Episodes []Episode `xml:"Episode"`
+	Episodes []Episode
 }
 
 func main() {
