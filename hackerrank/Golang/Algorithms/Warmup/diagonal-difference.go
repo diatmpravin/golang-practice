@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"math"
 )
 
 func sum(n int, arr [][]int) int {
@@ -48,5 +49,5 @@ func main() {
 		fmt.Println()
 	}
 
-	fmt.Println(sum(n, arr))
+	fmt.Println(math.Abs(float64(sum(n, arr))))
 }
