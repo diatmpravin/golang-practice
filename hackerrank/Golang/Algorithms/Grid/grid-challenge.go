@@ -1,52 +1,46 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 	"sort"
-	"strconv"
 )
 
-func main() {
-	s := bufio.NewScanner(bufio.NewReader(os.Stdin))
-	s.Split(bufio.ScanWords)
-
-	s.Scan()
-	t, _ := strconv.Atoi(s.Text())
-
-	s.Split(bufio.ScanLines)
-
-	for k := 0; k < t; k++ {
-		s.Scan()
-		n, _ := strconv.Atoi(s.Text())
-
-		g := make([][]int, n)
-		for i := 0; i < n; i++ {
-			s.Scan()
-			line := s.Text()
-			d := make([]int, n)
-			for j := 0; j < n; j++ {
-				d[j] = int(line[j])
+func checkGrid(grid [][]int, N int, ch chan string) {
+	for i := 0; i < N; i++ {
+		for j := 1; j < N; j++ {
+			if grid[j-1][i] > grid[j][i] {
+				ch <- "NO"
 			}
-			sort.Ints(d)
-			g[i] = d
 		}
+	}
 
-		flag := true
-		for i := 0; i < n; i++ {
-			for j := 1; j < n; j++ {
-				if g[j-1][i] > g[j][i] {
-					flag = false
-					break
+	ch <- "YES"
+}
+
+func main() {
+	var T int
+	fmt.Scanf("%d\n", &T)
+
+	for k := 0; k < T; k++ {
+		var N, char int
+		fmt.Scanf("%d", &N)
+
+		grid := make([][]int, N)
+		ch := make(chan string)
+		for i := 0; i < N; i++ {
+			grid[i] = make([]int, N)
+			for j := 0; j < N+1; j++ {
+				fmt.Scanf("%c", &char)
+
+				if j < N {
+					grid[i][j] = char
 				}
 			}
+			sort.Ints(grid[i])
 		}
 
-		if flag {
-			fmt.Println("YES")
-		} else {
-			fmt.Println("NO")
-		}
+		go checkGrid(grid, N, ch)
+
+		fmt.Println(<-ch)
 	}
 }
