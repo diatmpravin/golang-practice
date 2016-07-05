@@ -3,9 +3,9 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
-	"math"
 )
 
 func sum(n int, arr [][]int) int {
@@ -15,11 +15,9 @@ func sum(n int, arr [][]int) int {
 		primeDiagonal += arr[i][i]
 	}
 
-
-	for i, j := (n-1), 0; i >= 0; i, j = i-1, j+1 {
+	for i, j := (n - 1), 0; i >= 0; i, j = i-1, j+1 {
 		secondryDiagonal += arr[j][i]
 	}
-
 
 	return primeDiagonal - secondryDiagonal
 }
@@ -38,13 +36,13 @@ func main() {
 		for j := 0; j < n; j++ {
 			s.Scan()
 			v, _ := strconv.Atoi(s.Text())
-			arr[i][j] = v			 			
+			arr[i][j] = v
 		}
 	}
 
 	for i := 0; i < n; i++ {
 		for j := 0; j < n; j++ {
-			fmt.Print(arr[i][j])			 			
+			fmt.Print(arr[i][j])
 		}
 		fmt.Println()
 	}
