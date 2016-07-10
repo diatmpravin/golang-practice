@@ -15,9 +15,9 @@ func convertToSlice(s []string, n int) []int {
 		if err != nil {
 			panic(err)
 		}
-		arr[i] = r	
+		arr[i] = r
 	}
-	
+
 	return arr
 }
 
@@ -41,13 +41,13 @@ func calculateSum(s []int) (sum int) {
 	return
 }
 
-func checkStack(a, b, c int) bool {
-	if a == b && b == c {
-		return true
-	}
+// func checkStack(a, b, c int) bool {
+// 	if a == b && b == c {
+// 		return true
+// 	}
 
-	return false
-}
+// 	return false
+// }
 
 func main() {
 	s := bufio.NewScanner(bufio.NewReader(os.Stdin))
@@ -55,7 +55,7 @@ func main() {
 
 	s.Scan()
 	n1n2n3 := convertToSlice(strings.Split(s.Text(), " "), 3)
-	
+
 	s.Scan()
 	slice1 := convertToSlice(strings.Split(s.Text(), " "), n1n2n3[0])
 
@@ -71,9 +71,7 @@ func main() {
 
 	pSlice := primeSlice(s1, s2, s3)
 
-	if checkStack() {
-		fmt.Println(calculateSum)
+	if pSlice == s1 == s2 == s3 {
+		fmt.Println(s1, s2, s3, pSlice)
 	}
-
-	fmt.Println(s1, s2, s3, pSlice)
 }
