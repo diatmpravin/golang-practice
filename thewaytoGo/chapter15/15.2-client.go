@@ -19,15 +19,13 @@ func main() {
 	inputReader := bufio.NewReader(os.Stdin)
 	fmt.Println("First, what is your name?")
 	clientName, _ := inputReader.ReadString('\n')
-	// fmt.Printf("CLIENTNAME %s",clientName)
 	trimmedClient := strings.Trim(clientName, "\r\n") // "\r\n" on Windows, "\n" on Linux
+	
 	// send info to server until Quit:
 	for {
 		fmt.Println("What to send to the server? Type Q to quit.")
 		input, _ := inputReader.ReadString('\n')
 		trimmedInput := strings.Trim(input, "\r\n")
-		// fmt.Printf("input:--%s--",input)
-		// fmt.Printf("trimmedInput:--%s--",trimmedInput)
 		if trimmedInput == "Q" {
 			return
 		}
