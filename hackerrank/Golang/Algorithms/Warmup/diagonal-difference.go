@@ -8,8 +8,12 @@ import (
 	"strconv"
 )
 
-func sum(n int, arr [][]int) int {
+func diagonalDifference(n int, arr [][]int) int {
 	var primeDiagonal, secondryDiagonal int
+	
+	if len(arr[0]) == 0 {
+		return 0
+	}
 
 	for i := 0; i < n; i++ {
 		primeDiagonal += arr[i][i]
@@ -47,5 +51,5 @@ func main() {
 		fmt.Println()
 	}
 
-	fmt.Println(math.Abs(float64(sum(n, arr))))
+	fmt.Println(math.Abs(float64(diagonalDifference(n, arr))))
 }
