@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
-
 )
 
 // func readInt(n uint32) (sum uint32) {
@@ -17,15 +16,26 @@ import (
 // 	return
 // }
 
+func arraySum(arr []int) (s int) {
+	for _, v := range arr {
+		s = s + v
+	}
+
+	return
+}
+
 func readInt(n uint32) (sum uint32) {
 	s := bufio.NewScanner(bufio.NewReader(os.Stdin))
 	s.Split(bufio.ScanWords)
 
+	intSlice := []int{}
 	for i := 0; i < int(n); i++ {
 		s.Scan()
 		v, _ := strconv.Atoi(s.Text())
-		sum += uint32(v)
+		intSlice = append(intSlice, v)
 	}
+
+	fmt.Println(arraySum(intSlice))
 	return
 }
 
@@ -33,5 +43,5 @@ func main() {
 	var n uint32
 	fmt.Scan(&n)
 
-	fmt.Println(readInt(n))
+	readInt(n)
 }
