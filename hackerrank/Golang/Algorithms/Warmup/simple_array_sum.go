@@ -16,9 +16,9 @@ import (
 // 	return
 // }
 
-func arraySum(arr []int) (s int) {
-	for _, v := range arr {
-		s = s + v
+func arraySum(s []int) (sum int) {
+	for _, v := range s {
+		sum = sum + v
 	}
 
 	return
