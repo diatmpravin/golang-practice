@@ -6,9 +6,13 @@ import (
 	"os"
 )
 
+func myPrint(s string) string {
+	return s
+}
+
 func main() {
-	fmt.Println("Enter somthing")
+	fmt.Println("Hello, World.")
 	scan := bufio.NewScanner(os.Stdin)
 	scan.Scan()
-	fmt.Println(scan.Text())
+	fmt.Println(myPrint(scan.Text()))
 }
