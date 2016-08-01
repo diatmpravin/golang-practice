@@ -35,6 +35,11 @@ func equalStack(slice1, slice2, slice3 []int) (n int) {
 
 	pSlice := primeSlice(s1, s2, s3)
 	fmt.Println(pSlice)
+
+	for {
+		
+	}
+
 	return
 }
 
