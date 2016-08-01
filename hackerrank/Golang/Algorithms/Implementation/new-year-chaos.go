@@ -1,4 +1,4 @@
-package newyearchaos
+package main 
 
 import (
 	"fmt"

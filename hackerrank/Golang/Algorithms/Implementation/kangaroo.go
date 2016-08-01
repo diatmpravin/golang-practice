@@ -4,54 +4,20 @@ import (
 	"fmt"
 )
 
-func willTheyMeet(x1, x2, v1, v2 int) bool {
-	flag := false
-
-	if x2 > x1 && v2 >= v1 {
-		return false
+func willTheyMeet(x1, v1, x2, v2 int) string {
+	if x2 > x1 && v2 >= v1 || x1 > x2 && v1 >= v2 {
+		return "NO"
 	}
 
-	for i, j := x1, x2; j <= 10000 && i < j; i, j = i+v1, j+v2 {
-		fmt.Println(i, j)
-		if i == j {
-			flag = true
-			break
-		}
+	if (x1 - x2) % (v2 - v1) == 0  {
+		return "YES"
 	}
 
-	return flag
+	return "NO"
 }
 
 func main() {
 	var x1, v1, x2, v2 int
 	fmt.Scanf("%v %v %v %v", &x1, &v1, &x2, &v2)
-
-	// j := (x1-x2) % (v2-v1)
-
-	// if x2 > x1 && v2 >= v1 {
-	// 	fmt.Println("NO")
-	// } else if j == 0 {
-	//    fmt.Println("YES")
-	// } else {
-	//    fmt.Println("NO")
-	// }
-
-	// for i,j := x1, x2; ; i, j = i + v1, j + v2 {
-	// 	if x2 > x1 && v2 >= v1 {
-	// 		fmt.Println("NO")
-	// 		break
-	// 	}
-
-	// 	if i == j {
-	// 		break
-	// 	}
-	// }
-	
-	flag := willTheyMeet(x1, x2, v1, v2)
-
-	if flag {
-		fmt.Println("YES")
-	} else {
-		fmt.Println("NO")
-	}
+	fmt.Println(willTheyMeet(x1, v1, x2, v2))
 }

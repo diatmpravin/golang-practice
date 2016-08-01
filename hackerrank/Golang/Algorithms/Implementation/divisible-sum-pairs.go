@@ -3,11 +3,26 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"strconv"
 	"strings"
-	"io"
 )
+
+func divisibleSumPairs(s []int, k int) (count int) {
+	if len(s) == 0 || k == 0 {
+		return 0
+	}
+
+	for i := 0; i < len(s); i++ {
+		for j := i + 1; j < len(s); j++ {
+			if (s[i]+s[j])%k == 0 {
+				count++
+			}
+		}
+	}
+	return
+}
 
 func convertToSlice(s []string) []int {
 	arr := make([]int, len(s))
@@ -37,16 +52,6 @@ func main() {
 
 	intS := convertToSlice(strings.Fields(arrLine))
 
-	var count int
-
-	for i := 0; i < nk[0]-1; i++ {
-		for j := i + 1; j < nk[0]; j++ {
-			if (intS[i]+intS[j])%nk[1] == 0 {
-				count++
-			}
-		}
-	}
-
-	fmt.Println(count)
+	fmt.Println(divisibleSumPairs(intS, nk[1]))
 
 }
