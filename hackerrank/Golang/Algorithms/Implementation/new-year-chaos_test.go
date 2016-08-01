@@ -10,7 +10,7 @@ Too chaotic
 
 */
 
-package newyearchaos
+package main 
 
 import (
 	"github.com/stretchr/testify/assert"
