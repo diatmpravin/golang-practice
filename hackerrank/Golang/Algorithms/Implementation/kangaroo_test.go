@@ -12,6 +12,7 @@ func TestWillTheyMeet(t *testing.T) {
 	}{
 		{0, 3, 4, 2, "YES"},
 		{0, 2, 5, 3, "NO"},
+		{4523, 8092, 9419, 8076, "YES"},
 	}
 
 	for _, v := range willTheyMeetTest {
