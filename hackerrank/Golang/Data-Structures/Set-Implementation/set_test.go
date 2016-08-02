@@ -53,3 +53,22 @@ func TestRemoveSet(t *testing.T) {
 	aSet.Remove("ankit")
 	assert.Equal(t, 0, aSet.Size(), "TestRemoveSet should have size ZERO as remaing 1 and 'ankit' is also removed")
 }
+
+func TestConainSet(t *testing.T) {
+	aSet := NewSet()
+
+	aSet.Add(1)
+	aSet.Add("pravin")
+	aSet.Add("ankit")
+
+	assert.Equal(t, true, aSet.Contains("pravin"), "TestContainSet should contain 'pravin'")
+	assert.Equal(t, true, aSet.Contains(1), "TestContainSet should contain 1")
+	assert.Equal(t, true, aSet.Contains("ankit"), "TestContainSet should contain 'ankit'")
+
+	aSet.Remove("pravin")
+	assert.Equal(t, false, aSet.Contains("pravin"), "TestContainSet should contain 'pravin'")
+
+	aSet.Add("avi")
+	assert.Equal(t, true, aSet.Contains("avi"), "TestContainSet should contain 'avi'")
+
+}
