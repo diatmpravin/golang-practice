@@ -25,3 +25,7 @@ func (s *Set) Remove(i interface{}) {
 func (s Set) Size() int {
 	return len(s.set)
 }
+
+func (s *Set) Clear() {
+	s.set = make(map[interface{}]bool)
+}

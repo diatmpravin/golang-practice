@@ -72,3 +72,15 @@ func TestConainSet(t *testing.T) {
 	assert.Equal(t, true, aSet.Contains("avi"), "TestContainSet should contain 'avi'")
 
 }
+
+func TestClearSet(t *testing.T) {
+	aSet := NewSet()
+
+	aSet.Add(1)
+	aSet.Add("pravin")
+	aSet.Add("ankit")
+
+	aSet.Clear()
+	assert.Equal(t, 0, aSet.Size(), "TestClearSet size should be ZERO as, set got clear now")
+
+}
