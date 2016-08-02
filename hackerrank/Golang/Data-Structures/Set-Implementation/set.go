@@ -13,6 +13,11 @@ func (s *Set) Add(i interface{}) {
 	s.set[i] = true
 }
 
+func (s *Set) Contains(i interface{}) bool {
+	_, ok := s.set[i]
+	return ok
+}
+
 func (s Set) Size() int {
 	return len(s.set)
 }

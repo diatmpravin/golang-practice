@@ -30,4 +30,8 @@ func TestNoDuplicateItem(t *testing.T) {
 	aSet.Add(1)
 
 	assert.Equal(t, 3, aSet.Size(), "Set size should be 3 as 1 elements is duplicate")
+
+	assert.Equal(t, true, aSet.Contains("pravin"), "Set should contains 'pravin' element")
+	assert.Equal(t, true, aSet.Contains("ankit"), "Set should contains 'ankit' element")
+	assert.Equal(t, true, aSet.Contains(1), "Set should contains '1' element")
 }
