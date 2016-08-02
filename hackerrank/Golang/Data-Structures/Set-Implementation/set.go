@@ -8,6 +8,11 @@ func NewSet() *Set {
 	return &Set{make(map[interface{}]bool)}
 }
 
-func (set Set) Size() int {
-	return len(set.set)
+func (s *Set) Add(i interface{}) {
+	_, _ = s.set[i]
+	s.set[i] = true
+}
+
+func (s Set) Size() int {
+	return len(s.set)
 }
