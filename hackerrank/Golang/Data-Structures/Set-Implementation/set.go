@@ -29,3 +29,15 @@ func (s Set) Size() int {
 func (s *Set) Clear() {
 	s.set = make(map[interface{}]bool)
 }
+
+func (s *Set) IsSubset(other *Set) bool {
+	var counter int
+
+	for key, _ := range s.set {
+		if other.Contains(key) {
+			counter++
+		}
+	}
+	return counter == s.Size()
+
+}

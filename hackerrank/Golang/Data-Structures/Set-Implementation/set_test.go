@@ -84,3 +84,28 @@ func TestClearSet(t *testing.T) {
 	assert.Equal(t, 0, aSet.Size(), "TestClearSet size should be ZERO as, set got clear now")
 
 }
+
+func Test_SetIsSubset(t *testing.T) {
+	a := NewSet()
+	a.Add(1)
+	a.Add(2)
+	a.Add(3)
+	a.Add(5)
+	a.Add(7)
+
+	b := NewSet()
+	b.Add(3)
+	b.Add(5)
+	b.Add(7)
+
+	if !b.IsSubset(a) {
+		t.Error("set b should be a subset of set a")
+	}
+
+	b.Add(72)
+
+	if b.IsSubset(a) {
+		t.Error("set b should not be a subset of set a because it contains 72 which is not in the set of a")
+	}
+
+}
