@@ -18,6 +18,10 @@ func (s *Set) Contains(i interface{}) bool {
 	return ok
 }
 
+func (s *Set) Remove(i interface{}) {
+	delete(s.set, i)
+}
+
 func (s Set) Size() int {
 	return len(s.set)
 }

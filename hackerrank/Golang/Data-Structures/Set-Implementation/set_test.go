@@ -35,3 +35,21 @@ func TestNoDuplicateItem(t *testing.T) {
 	assert.Equal(t, true, aSet.Contains("ankit"), "Set should contains 'ankit' element")
 	assert.Equal(t, true, aSet.Contains(1), "Set should contains '1' element")
 }
+
+func TestRemoveSet(t *testing.T) {
+	aSet := NewSet()
+
+	aSet.Add(1)
+	aSet.Add("pravin")
+	aSet.Add("ankit")
+
+	aSet.Remove("pravin")
+
+	assert.Equal(t, 2, aSet.Size(), "Set size should be 2 as, one elment 'pravin' is removed")
+	assert.Equal(t, true, aSet.Contains(1), "Set should only conatins 1 and 'ankit'")
+	assert.Equal(t, true, aSet.Contains("ankit"), "Set should only conatins 1 and 'ankit'")
+
+	aSet.Remove(1)
+	aSet.Remove("ankit")
+	assert.Equal(t, 0, aSet.Size(), "TestRemoveSet should have size ZERO as remaing 1 and 'ankit' is also removed")
+}
