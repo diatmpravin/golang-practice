@@ -1,7 +1,6 @@
 package set
 
 import (
-	"fmt"
 	"sync"
 )
 
@@ -21,13 +20,21 @@ func init() {
 	}
 }
 
+func (s *Set) Add(items ...interface{}) {
+	s.lock.Lock()
+	defer s.lock.Unlock()
+
+	s.flattened = nil
+	for _, item := range items {
+		s.items[item] = struct{}{}
+	}
+}
+
 func NewSet(items ...interface{}) *Set {
 	set := pool.Get().(*Set)
-	fmt.Printf("When New set Created:------> %+v \n", set)
 	for _, item := range items {
 		set.items[item] = struct{}{}
 	}
 
-	fmt.Printf("At the time of return:-----> %+v \n", set)
 	return set
 }

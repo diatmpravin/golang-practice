@@ -22,3 +22,11 @@ func TestNewSetWithThreeItem(t *testing.T) {
 
 	assert.Equal(t, 3, len(s.items), "TestNewSetWithThreeItem should have 3 item in set")
 }
+
+func TestAddItems(t *testing.T) {
+	s := NewSet()
+
+	s.Add(`test`)
+	s.Add(`test1`)
+	assert.Equal(t, 2, len(s.items), "TestAddItems should have 2 items in set")
+}
