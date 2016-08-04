@@ -70,7 +70,13 @@ func convertToSlice(s []string, n int64) []int64 {
 	for i = 0; i < n; i++ {
 		r, err := strconv.Atoi(s[i])
 		if err != nil {
-			panic(err)
+			fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++")
+			fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++")
+			fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++")
+			fmt.Println(err)
+			fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++")
+			fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++")
+			fmt.Println("+++++++++++++++++++++++++++++++++++++++++++++")
 		}
 		arr[i] = int64(r)
 	}
@@ -84,15 +90,38 @@ func main() {
 
 	s.Scan()
 	n1n2n3 := convertToSlice(strings.Split(s.Text(), " "), 3)
+	fmt.Println(n1n2n3)
 
-	s.Scan()
-	slice1 := convertToSlice(strings.Split(s.Text(), " "), n1n2n3[0])
+	// s.Scan()
+	// slice1 := convertToSlice(strings.Split(s.Text(), " "), n1n2n3[0])
 
-	s.Scan()
-	slice2 := convertToSlice(strings.Split(s.Text(), " "), n1n2n3[1])
+	var tmp, i int64
+	slice1 := make([]int64, n1n2n3[0])
+	for i = 0; i < n1n2n3[0]; i++ {
+		fmt.Scan(&tmp)
+		slice1[i] = tmp
+		fmt.Println(slice1)
+	}
+	fmt.Println(slice1)
 
-	s.Scan()
-	slice3 := convertToSlice(strings.Split(s.Text(), " "), n1n2n3[2])
+	// s.Scan()
+	// slice2 := convertToSlice(strings.Split(s.Text(), " "), n1n2n3[1])
+	slice2 := make([]int64, n1n2n3[1])
+	for i = 0; i < n1n2n3[1]; i++ {
+		fmt.Scan(&tmp)
+		slice2[i] = tmp
+	}
+	fmt.Println(slice2)
+
+	// s.Scan()
+	// slice3 := convertToSlice(strings.Split(s.Text(), " "), n1n2n3[2])
+	slice3 := make([]int64, n1n2n3[2])
+	for i = 0; i < n1n2n3[2]; i++ {
+		fmt.Scan(&tmp)
+		slice3[i] = tmp
+	}
+
+	fmt.Println(slice3)
 
 	fmt.Println(equalStack(slice1, slice2, slice3))
 }
