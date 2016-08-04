@@ -33,3 +33,9 @@ func (s *Set) Contains(i ...interface{}) bool {
 	}
 	return true
 }
+
+func (s *Set) Remove(i ...interface{}) {
+	for _, item := range i {
+		delete(s.set, item)
+	}
+}

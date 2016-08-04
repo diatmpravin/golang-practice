@@ -36,21 +36,42 @@ func TestNewSetAdd(t *testing.T) {
 }
 
 func TestSetContains(t *testing.T) {
-	set := NewHashSet()
-	set.Add(3, 1, 2)
-	set.Add(2, 3)
-	set.Add()
+	s := NewHashSet()
+	s.Add(3, 1, 2)
+	s.Add(2, 3)
+	s.Add()
 
-	if actualValue := set.Contains(); actualValue != true {
+	if actualValue := s.Contains(); actualValue != true {
 		t.Errorf("Got %v expected %v", actualValue, true)
 	}
-	if actualValue := set.Contains(1); actualValue != true {
+	if actualValue := s.Contains(1); actualValue != true {
 		t.Errorf("Got %v expected %v", actualValue, true)
 	}
-	if actualValue := set.Contains(1, 2, 3); actualValue != true {
+	if actualValue := s.Contains(1, 2, 3); actualValue != true {
 		t.Errorf("Got %v expected %v", actualValue, true)
 	}
-	if actualValue := set.Contains(1, 2, 3, 4); actualValue != false {
+	if actualValue := s.Contains(1, 2, 3, 4); actualValue != false {
 		t.Errorf("Got %v expected %v", actualValue, false)
+	}
+}
+
+func TestSetRemove(t *testing.T) {
+	s := NewHashSet()
+	s.Add(3, 1, 2)
+	s.Remove()
+
+	if actualValue := s.Size(); actualValue != 3 {
+		t.Errorf("Got %v expected %v", actualValue, 3)
+	}
+	s.Remove(1)
+	if actualValue := s.Size(); actualValue != 2 {
+		t.Errorf("Got %v expected %v", actualValue, 2)
+	}
+	s.Remove(3)
+	s.Remove(3)
+	s.Remove()
+	s.Remove(2)
+	if actualValue := s.Size(); actualValue != 0 {
+		t.Errorf("Got %v expected %v", actualValue, 0)
 	}
 }
