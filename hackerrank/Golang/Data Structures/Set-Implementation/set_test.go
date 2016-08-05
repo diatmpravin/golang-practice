@@ -8,7 +8,7 @@ import (
 func TestNewSet(t *testing.T) {
 	a := NewSet()
 
-	assert.Equal(t, 0, a.Size(), "NewSet should start out as an empty set")
+	assert.Equal(t, 1, a.Size(), "NewSet should start out as an empty set")
 }
 
 func TestAddSet(t *testing.T) {
