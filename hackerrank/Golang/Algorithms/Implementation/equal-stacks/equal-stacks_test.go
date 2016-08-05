@@ -7,10 +7,11 @@ import (
 
 func TestEqualStack(t *testing.T) {
 	var equalStackTest = []struct {
-		slice1, slice2, slice3 []int
-		result                 int
+		slice1, slice2, slice3 []int64
+		result                 int64
 	}{
-		{[]int{3, 2, 1, 1, 1}, []int{4, 3, 2}, []int{1, 1, 4, 1}, 5},
+		{[]int64{3, 2, 1, 1, 1}, []int64{4, 3, 2}, []int64{1, 1, 4, 1}, 5},
+		{[]int64{1, 1, 1, 1, 1}, []int64{3, 2}, []int64{1, 3, 1}, 5},
 	}
 
 	for _, v := range equalStackTest {
